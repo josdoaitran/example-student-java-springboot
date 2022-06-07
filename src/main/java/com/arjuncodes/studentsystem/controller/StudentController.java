@@ -20,7 +20,7 @@ public class StudentController {
         return "New student is added";
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/get_all")
     public List<Student> list(){
         return studentService.getAllStudents();
     }

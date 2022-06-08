@@ -64,6 +64,11 @@ public class StudentController {
         return studentService.getStudentById(studentId);
     }
 
+    @PutMapping("/update_student_name/{studentId}")
+    public Student updateStudentByStudentId(@PathVariable String studentId, @RequestBody Student student){
+        return studentService.updateStudentNameById(studentId, student);
+    }
+
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/delete_student_id/{studentId}")
     public void deleteStudent(@PathVariable String studentId){

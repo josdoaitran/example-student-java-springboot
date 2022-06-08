@@ -35,6 +35,14 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public Student updateStudentNameById(String studentId, Student studentName){
+        Student studentUpdate =  studentRepository.getOne(Integer.valueOf(studentId));
+        String studentNameStr = studentName.getName();
+        studentUpdate.setName(studentNameStr);
+        return studentRepository.save(studentUpdate);
+    }
+
+    @Override
     public void deleteStudentId(String studentId){
         studentRepository.deleteById(Integer.valueOf(studentId));
     }

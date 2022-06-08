@@ -1,7 +1,7 @@
-package com.arjuncodes.studentsystem.service;
+package com.testing4everyone.studentsystem.service;
 
-import com.arjuncodes.studentsystem.model.Student;
-import com.arjuncodes.studentsystem.repository.StudentRepository;
+import com.testing4everyone.studentsystem.model.Student;
+import com.testing4everyone.studentsystem.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

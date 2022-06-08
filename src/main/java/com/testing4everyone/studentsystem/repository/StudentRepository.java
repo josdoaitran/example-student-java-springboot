@@ -1,6 +1,6 @@
-package com.arjuncodes.studentsystem.repository;
+package com.testing4everyone.studentsystem.repository;
 
-import com.arjuncodes.studentsystem.model.Student;
+import com.testing4everyone.studentsystem.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

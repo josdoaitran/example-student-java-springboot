@@ -1,7 +1,7 @@
-package com.arjuncodes.studentsystem.controller;
+package com.testing4everyone.studentsystem.controller;
 
-import com.arjuncodes.studentsystem.model.Student;
-import com.arjuncodes.studentsystem.service.StudentService;
+import com.testing4everyone.studentsystem.model.Student;
+import com.testing4everyone.studentsystem.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

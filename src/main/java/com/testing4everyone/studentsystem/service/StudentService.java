@@ -1,6 +1,6 @@
-package com.arjuncodes.studentsystem.service;
+package com.testing4everyone.studentsystem.service;
 
-import com.arjuncodes.studentsystem.model.Student;
+import com.testing4everyone.studentsystem.model.Student;
 
 import java.util.List;
 import java.util.Optional;

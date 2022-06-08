@@ -4,7 +4,6 @@ import com.arjuncodes.studentsystem.model.Student;
 import com.arjuncodes.studentsystem.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,7 +25,17 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Optional<Student> getStudentId(@RequestParam String studentId){
+    public Optional<Student> getStudentById(String studentId){
         return studentRepository.findById(Integer.valueOf(studentId));
+    }
+
+    @Override
+    public Optional<Student>getStudentByName(String studentName){
+        return studentRepository.findByName(studentName);
+    }
+
+    @Override
+    public void deleteStudentId(String studentId){
+        studentRepository.deleteById(Integer.valueOf(studentId));
     }
 }

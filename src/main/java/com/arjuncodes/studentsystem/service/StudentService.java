@@ -8,5 +8,7 @@ import java.util.Optional;
 public interface StudentService {
     public Student saveStudent(Student student);
     public List<Student> getAllStudents();
-    Optional<Student> getStudentId(String studentId);
+    public Optional<Student> getStudentById(String studentId);
+    public Optional<Student> getStudentByName(String studentId);
+    public void deleteStudentId(String studentId);
 }

@@ -3,6 +3,7 @@ package com.arjuncodes.studentsystem.controller;
 import com.arjuncodes.studentsystem.model.Student;
 import com.arjuncodes.studentsystem.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -42,8 +43,30 @@ public class StudentController {
         return studentService.getAllStudents();
     }
 
-    @GetMapping("/get_student_id/{studentID}")
-    public Optional<Student> student(@PathVariable String studentID){
-        return studentService.getStudentId(studentID);
+    @GetMapping("/get_student_id/{studentId}")
+    public ResponseEntity<Optional<Student>> student(@PathVariable String studentId){
+        HttpHeaders headers = new HttpHeaders();
+        Optional<Student> returnStudent = studentService.getStudentById(studentId);
+        if(!returnStudent.isEmpty()) return new ResponseEntity<>(returnStudent, headers, HttpStatus.OK);
+        else return new ResponseEntity<>(headers, HttpStatus.OK);
+    }
+
+    @GetMapping("/get_student_name")
+    public ResponseEntity<Optional<Student>> getStudentByStudentName(@RequestParam String studentName){
+        HttpHeaders headers = new HttpHeaders();
+        Optional<Student> returnStudent = studentService.getStudentByName(studentName);
+        if(!returnStudent.isEmpty()) return new ResponseEntity<>(returnStudent, headers, HttpStatus.OK);
+        else return new ResponseEntity<>(headers, HttpStatus.OK);
+    }
+
+    @GetMapping("/get_student_id/v1/{studentId}")
+    public Optional<Student> getStudentOldVersion(@PathVariable String studentId){
+        return studentService.getStudentById(studentId);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/delete_student_id/{studentId}")
+    public void deleteStudent(@PathVariable String studentId){
+        studentService.deleteStudentId(studentId);
     }
 }

@@ -64,9 +64,9 @@ public class StudentController {
         return studentService.getStudentById(studentId);
     }
 
-    @PutMapping("/update_student_name/{studentId}")
+    @PutMapping("/update_student_info/{studentId}")
     public Student updateStudentByStudentId(@PathVariable String studentId, @RequestBody Student student){
-        return studentService.updateStudentNameById(studentId, student);
+        return studentService.updateStudentInfoById(studentId, student);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)

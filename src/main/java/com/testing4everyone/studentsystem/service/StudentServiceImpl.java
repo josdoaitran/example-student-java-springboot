@@ -38,7 +38,9 @@ public class StudentServiceImpl implements StudentService {
     public Student updateStudentInfoById(String studentId, Student studentName){
         Student studentUpdate =  studentRepository.getOne(Integer.valueOf(studentId));
         String studentNameStr = studentName.getName();
+        String studentAddressStr = studentName.getAddress();
         studentUpdate.setName(studentNameStr);
+        studentUpdate.setAddress(studentAddressStr);
         return studentRepository.save(studentUpdate);
     }
 

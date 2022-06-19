@@ -2,6 +2,7 @@
 - Java 11.
 - Docker
 - Run: `docker network create databaseNet` to create Network: `databaseNet`
+- run build: `mn clean package`
 - docker compose -f local-docker-compose.yml
 
 

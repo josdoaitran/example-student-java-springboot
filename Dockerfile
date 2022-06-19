@@ -5,8 +5,7 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 RUN mvn package
 
-#FROM openjdk:11
-FROM openjdk:11-jre
+FROM openjdk:11
 EXPOSE 8080/tcp
 VOLUME /tmp
 ADD ./target/studentsystem-1.0.1.jar studentsystem.jar

@@ -5,6 +5,9 @@
 - run build: `mn clean package`
 - docker compose -f local-docker-compose.yml
 
+## Spring deploy to Heroku:
+ - Site: https://www.heroku.com/
+
 
 Reference:
 - https://start.spring.io/

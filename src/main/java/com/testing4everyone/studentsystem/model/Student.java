@@ -1,27 +1,44 @@
 package com.testing4everyone.studentsystem.model;
 
-import com.sun.istack.NotNull;
+import java.util.Date;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NotEmpty
+    @NotEmpty @Min(3) @Max(10)
     @Column(name = "name", unique = false)
     private String name;
-    @NotNull
-    @Email
-    @Column(name = "email", unique = true)
+    @Email(message = "Email is not valid", regexp = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])")
+    @NotEmpty(message = "Email cannot be empty")
     private String email;
+
+    @NotNull
+    private Gender gender;
+
+    @NotEmpty @Min(5) @Max(50)
     private String address;
 
-    public Student() {
+    @DateTimeFormat(pattern="MM/dd/yyyy")
+    @NotNull @Past
+    private Date birthday;
+
+    public enum Gender {
+        MALE, FEMALE
     }
+
+    public Student() {}
 
     public int getId() {
         return id;
@@ -42,6 +59,22 @@ public class Student {
     public String getEmail(){ return email;}
 
     public void setEmaiL(String email){this.email = email;}
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 
     public String getAddress() {
         return address;

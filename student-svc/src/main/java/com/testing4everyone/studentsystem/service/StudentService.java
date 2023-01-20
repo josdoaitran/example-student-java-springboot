@@ -9,7 +9,8 @@ public interface StudentService {
     public Student saveStudent(Student student);
     public List<Student> getAllStudents();
     public Optional<Student> getStudentById(String studentId);
-    public Optional<Student> getStudentByName(String studentId);
+    public Optional<Student> getStudentByName(String studentName);
+    public Optional<Student> getStudentByEmail(String studentName);
     public Student updateStudentInfoById(String studentId, Student studentName);
     public void deleteStudentId(String studentId);
 }

@@ -1,6 +1,6 @@
-package com.testing4everyone.studentsystem.service;
+package com.testing4everyone.studentsvc.service;
 
-import com.testing4everyone.studentsystem.model.Student;
+import com.testing4everyone.studentsvc.model.Student;
 
 import java.util.List;
 import java.util.Optional;

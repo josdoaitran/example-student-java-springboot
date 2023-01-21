@@ -87,7 +87,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.testing4everyone.studentsystem.StudentsystemApplication</mainClass>
+							<mainClass>com.testing4everyone.studentsvc.StudentsystemApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

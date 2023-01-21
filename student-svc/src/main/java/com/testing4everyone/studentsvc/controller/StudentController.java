@@ -1,7 +1,7 @@
-package com.testing4everyone.studentsystem.controller;
+package com.testing4everyone.studentsvc.controller;
 
-import com.testing4everyone.studentsystem.model.Student;
-import com.testing4everyone.studentsystem.service.StudentService;
+import com.testing4everyone.studentsvc.model.Student;
+import com.testing4everyone.studentsvc.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

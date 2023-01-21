@@ -1,6 +1,6 @@
-package com.testing4everyone.studentsystem.repository;
+package com.testing4everyone.studentsvc.repository;
 
-import com.testing4everyone.studentsystem.model.Student;
+import com.testing4everyone.studentsvc.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

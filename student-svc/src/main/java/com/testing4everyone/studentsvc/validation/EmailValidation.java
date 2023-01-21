@@ -1,4 +1,4 @@
-package com.testing4everyone.studentsystem.validation;
+package com.testing4everyone.studentsvc.validation;
 
 import java.util.regex.Pattern;
 

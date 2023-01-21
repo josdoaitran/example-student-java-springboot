@@ -1,4 +1,4 @@
-package com.testing4everyone.studentsystem.config;
+package com.testing4everyone.studentsvc.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

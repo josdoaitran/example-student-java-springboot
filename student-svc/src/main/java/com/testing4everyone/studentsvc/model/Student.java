@@ -1,4 +1,4 @@
-package com.testing4everyone.studentsystem.model;
+package com.testing4everyone.studentsvc.model;
 
 import java.util.Date;
 

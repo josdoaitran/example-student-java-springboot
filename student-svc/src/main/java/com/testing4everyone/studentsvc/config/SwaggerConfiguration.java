@@ -28,7 +28,7 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.testing4everyone.studentsystem.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.testing4everyone.studentsvc.controller"))
                 .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
                 .paths(regex("/student/.*"))
                 .build();

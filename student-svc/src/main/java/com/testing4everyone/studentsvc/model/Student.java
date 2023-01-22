@@ -27,6 +27,9 @@ public class Student {
     @NotNull
     private Gender gender;
 
+    @NotNull
+    private Status status;
+
     @NotEmpty @Min(5) @Max(50)
     private String address;
 
@@ -36,6 +39,10 @@ public class Student {
 
     public enum Gender {
         MALE, FEMALE
+    }
+
+    public enum Status {
+        OPEN, ACTIVE, DISABLE
     }
 
     public Student() {}

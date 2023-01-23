@@ -1,0 +1,22 @@
+management:
+    endpoint:
+        health:
+            group:
+                custom:
+                    show-components: always
+                    show-details: always
+logging:
+    level:
+        org:
+            hibernate: ERROR
+            springframework:
+                web: DEBUG
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: student-svc-password
+        url: jdbc:mysql://0.0.0.0:3306/student_db
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update

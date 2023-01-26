@@ -5,6 +5,7 @@ import com.testing4everyone.studentsvc.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,14 +41,22 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student updateStudentInfoById(String studentId, Student studentName){
+    public Student updateStudentInfoById(String studentId, Student student){
         Student studentUpdate =  studentRepository.getOne(Integer.valueOf(studentId));
-        String studentNameStr = studentName.getName();
-        String studentAddressStr = studentName.getAddress();
-        String studentEmmailString = studentName.getEmail();
+        String studentNameStr = student.getName();
+        String studentAddressStr = student.getAddress();
+        String studentEmmailString = student.getEmail();
+        Student.Gender gender = student.getGender();
+        Student.Status status = student.getStatus();
+        Date birthday = student.getBirthday();
+
         studentUpdate.setName(studentNameStr);
         studentUpdate.setAddress(studentAddressStr);
         studentUpdate.setEmaiL(studentEmmailString);
+        studentUpdate.setGender(gender);
+        studentUpdate.setStatus(status);
+        studentUpdate.setBirthday(birthday);
+
         return studentRepository.save(studentUpdate);
     }
 

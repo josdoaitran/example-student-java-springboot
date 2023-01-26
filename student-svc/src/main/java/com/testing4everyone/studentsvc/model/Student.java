@@ -75,6 +75,13 @@ public class Student {
         this.gender = gender;
     }
 
+    public Status getStatus(){
+        return status;
+    }
+
+    public void setStatus(Status status){
+        this.status = status;
+    }
     public Date getBirthday() {
         return birthday;
     }
